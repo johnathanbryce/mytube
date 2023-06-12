@@ -1,0 +1,18 @@
+.playlist_container{
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 1rem 0;
+}
+
+.content_flex_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle_icon{
+    font-size: 3rem;
+    fill: var(--accent-color);
+    cursor: pointer;
+}

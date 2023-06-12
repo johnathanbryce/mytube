@@ -1,0 +1,18 @@
+.yt_playlist_container{
+    display: flex;
+    align-items: center;
+}
+.overflow_content_container{
+    display: flex;
+    gap: 5rem;
+    overflow-x: hidden;
+}
+
+.icon {
+    font-size: 3.25rem;
+    margin: 1.2rem;
+    fill: var(--accent-color);
+    cursor: pointer;
+}
+
+
