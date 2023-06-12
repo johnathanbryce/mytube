@@ -1,0 +1,12 @@
+.video_card{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: var(--card-bg-color);
+    border: var(--borderRadius) solid var(--accent-color);
+}
+
+.card {
+    width: 25rem;
+}
+

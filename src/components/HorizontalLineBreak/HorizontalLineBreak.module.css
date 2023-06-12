@@ -1,0 +1,5 @@
+.line{
+    height: var(--horizontal-line);
+    width: 100%;
+    background-color: var(--accent-color);
+}
