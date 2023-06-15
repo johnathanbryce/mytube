@@ -1,12 +1,20 @@
 .video_card{
-    display: flex;
-    flex-direction: column;
     padding: 2rem;
     background-color: var(--card-bg-color);
     border: var(--borderRadius) solid var(--accent-color);
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     width: 25rem;
 }
 
+/* Mobile Devices (landscape) */
+@media (max-width: 775px) { 
+    .card {
+
+        width: 15rem;
+    }
+}

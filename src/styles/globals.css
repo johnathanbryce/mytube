@@ -25,7 +25,7 @@ main {
 
 /* Typography */
 p {
-    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
     color: var(--text-color);
     margin: 0;
     font-weight: 500;
@@ -68,6 +68,6 @@ h5 {
 }
 
 h6 {
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
 }
 

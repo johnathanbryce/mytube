@@ -1,0 +1,55 @@
+.search{
+    display: grid;
+    place-content: center;
+}
+.search_inputs{
+    display: grid;
+    place-content: center;
+
+}
+.search_input {
+    width: 30rem;    /* match with .data_result width */
+    padding: 1.3rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+.search_input:focus{
+    outline: var(--accent-color);
+}
+
+.data_result {
+    margin-top: 2rem;
+    width: 30rem;  /* match with .search_input width */
+    height: 20rem;
+    overflow: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.data_result::-webkit-scrollbar {
+    display: none;
+}
+
+.data_result .data_item{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    
+}
+
+.data_item p{
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.data_item p:hover{
+    background-color: var(--card-bg-color);
+    color: var(--accent-color);
+    font-weight: 600;
+}

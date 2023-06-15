@@ -1,31 +1,30 @@
 'use client'
-import styles from './PlaylistContainer.module.css'
+import styles from './Expandable.module.css'
 import { useState } from 'react'
-
 // internal components
 import HorizontalLineBreak from '@/components/HorizontalLineBreak/HorizontalLineBreak'
 // external libraries
 import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai'
 
-interface PlaylistContainerProps {
+interface ExpandableContainerProps {
     title: string,
     children: any
 }
 
-function PlaylistContainer({title, children}: PlaylistContainerProps) {
+function ExpandableContainer({title, children}: ExpandableContainerProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () =>{
     setIsExpanded((prev) => !prev)
   }
   return (
-    <div className={styles.playlist_container}>
-        <div>
+    <div className={styles.expandable_container}>
+        <div onClick={toggleExpand}>
             <div className={styles.content_flex_wrapper}>
-                <h2> {title}</h2>
+                <h4> {title}</h4>
                 {isExpanded ? 
-                    <div onClick={toggleExpand}> <AiOutlineMinus className={styles.toggle_icon}/> </div> :
-                    <div onClick={toggleExpand}> <AiOutlinePlus className={styles.toggle_icon}/> </div>
+                    <div > <AiOutlineMinus className={styles.toggle_icon}/> </div> :
+                    <div > <AiOutlinePlus className={styles.toggle_icon}/> </div>
                 }
             </div>
             <HorizontalLineBreak />
@@ -41,4 +40,4 @@ function PlaylistContainer({title, children}: PlaylistContainerProps) {
   )
 }
 
-export default PlaylistContainer
+export default ExpandableContainer
