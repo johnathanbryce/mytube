@@ -17,6 +17,23 @@ body {
     overflow-x: hidden; 
     background-color: var(--background-color);
 }
+
+/*
+    --background-color: #FEF0E5;
+    --accent-color: #C69999;
+    --card-bg-color: white;
+    --header-color: #333333;
+    --text-color: #333333;
+
+*/
+
+[data-theme="dark"]{
+  --background-color: #333333;
+  --accent-color: #C69999;
+  --card-bg-color: white;
+  --header-color: #C69999;
+  --text-color: white;
+}
   
   
 main {
