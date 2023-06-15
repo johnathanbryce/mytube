@@ -3,21 +3,24 @@ import styles from './YoutubeReactHooks.module.css'
 // internal components
 import VideoCard from '@/components/VideoCard/VideoCard';
 import YoutubePlayListContainer from '@/components/YoutubePlaylistContainer/YoutubePlayListContainer';
+import SearchBar from '@/components/SearchBar/SearchBar';
 // custom hooks
 import useFetchYoutubePlaylistData from '@/hooks/useFetchYoutubePlaylistData';
-// external libraries
-import {MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew} from 'react-icons/md'
 
-function YoutubeReactHooks() {
-    const url ='https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLZlA0Gpn_vH8EtggFGERCwMY5u5hOjf-h&maxResults=50';
-    const {playlistData, loading} = useFetchYoutubePlaylistData({url});
-  
-    if (loading) {
-      return <h3> Loading ... </h3>
+interface YoutubePlaylistProps {
+  playlistData: any,
+  loading: boolean
+}
+
+function YoutubeReactHooks({playlistData, loading}: YoutubePlaylistProps) {
+
+    if(loading){
+      return <h3> Loading... </h3>
     }
-  
+
     return (
-      <YoutubePlayListContainer>
+      <div>
+        <YoutubePlayListContainer>
           {playlistData.map((item: any) => (
                   <VideoCard key={item.id}>
                       <a href={`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`} target="_blank">
@@ -28,6 +31,8 @@ function YoutubeReactHooks() {
                   </VideoCard>
           ))}
       </YoutubePlayListContainer>
+      </div>
+
     )
 }
 

@@ -6,12 +6,15 @@ import YoutubePlayListContainer from '@/components/YoutubePlaylistContainer/Yout
 // custom hooks
 import useFetchYoutubePlaylistData from '@/hooks/useFetchYoutubePlaylistData';
 
-function YoutubeMyPlaylist() {
-  const url ='https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLUqrztT-IDeNLSgZ381IABdEXV-MFf8AM&&maxResults=50';
-  const {playlistData, loading} = useFetchYoutubePlaylistData({url});
+interface YoutubePlaylistProps {
+  playlistData: any,
+  loading: boolean
+}
 
-  if (loading) {
-    return <h3> Loading ... </h3>
+function YoutubeMyPlaylist({playlistData, loading}: YoutubePlaylistProps) {
+
+  if(loading){
+    return <h3> Loading... </h3>
   }
 
   return (
