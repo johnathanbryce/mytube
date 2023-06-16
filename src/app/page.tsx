@@ -14,7 +14,7 @@ export default function Home() {
         <Youtube />
       </ExpandableContainerMain>
       <ExpandableContainerMain title="Music">
-        <Youtube />
+       
       </ExpandableContainerMain>
 
     </main>

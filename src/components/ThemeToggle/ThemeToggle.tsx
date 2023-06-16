@@ -7,12 +7,10 @@ import Moon from '../../../public/Moon.svg'
 import Sun from '../../../public/Sun.svg'
 
 const setDarkMode = () =>{
-    console.log('toggle')
     document.querySelector("body")?.setAttribute("data-theme", 'dark')
   }
   
   const setLightMode = () =>{
-    console.log('toggle')
     document.querySelector("body")?.setAttribute("data-theme", 'light')
   }
 const ThemeToggle = () => {
