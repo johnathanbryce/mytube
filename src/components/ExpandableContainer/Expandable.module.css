@@ -13,6 +13,6 @@
 
 .toggle_icon{
     font-size: 3rem;
-    fill: var(--accent-color);
+    fill: var(--text-color);
     cursor: pointer;
 }

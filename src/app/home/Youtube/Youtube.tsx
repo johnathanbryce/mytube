@@ -52,10 +52,10 @@ function Youtube() {
       ) : (
         <>
           <SearchBar placeholder="Search videos..." data={mergedPlaylistData} />
-          <ExpandableContainer title="John's Coding Playlist">
+          <ExpandableContainer title="Coding ">
             <YoutubeMyPlaylist playlistData={playlistData1} loading={loading} />
           </ExpandableContainer>
-          <ExpandableContainer title="React Hooks Playlist">
+          <ExpandableContainer title="React Hooks ">
             <YoutubeReactHooks playlistData={playlistData0} loading={loading} />
           </ExpandableContainer>
         </>
