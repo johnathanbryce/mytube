@@ -5,7 +5,7 @@ import ThemeToggle from '../ThemeToggle/ThemeToggle'
 function Header() {
   return (
     <header className={styles.header}>
-        <h1> MediaBlend</h1>
+        <h1> MyTube </h1>
         <ThemeToggle />
     </header>
   )
