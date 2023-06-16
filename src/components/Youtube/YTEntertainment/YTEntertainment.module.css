@@ -1,0 +1,20 @@
+.youtube{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    /* margin-left: 2rem; */
+    margin: 0 6rem;
+}
+
+.error{
+    margin: 0 auto;
+    color: red;
+    font-weight: bold;
+}
+
+/* Mobile Devices (landscape) */
+@media (max-width: 775px) { 
+    .youtube{
+        margin: 0 2rem;
+    }
+}

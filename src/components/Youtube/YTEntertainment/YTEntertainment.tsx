@@ -1,25 +1,24 @@
 'use client'
-import styles from './Youtube.module.css'
+import styles from './YTEntertainment.module.css'
 import { useState, useEffect } from 'react'
 // internal components
-import YTChannels from '@/components/YoutubeData/YTChannels/YTChannels'
+import YTChannels from '@/components/Youtube/YTChannels/YTChannels'
 import ExpandableContainer from '@/components/ExpandableContainer/ExpandableContainer'
 import SearchBar from '@/components/SearchBar/SearchBar'
 import LoadingSpinner from '@/app/loading'
 // custom function
 import fetchYoutubePlaylistData from '@/utils/fetchYoutubePlaylistData'
 
-function Youtube() {
+interface YoutubeProps {
+  urls: string[],
+  titles: string[]
+}
+
+function YoutubeEntertainment({urls, titles}: YoutubeProps) {
   const [playlistData, setPlaylistData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('Unable to fetch data from the YouTube API. Please check your daily quota limit.')
-  /* const [maxResults, setMaxResults] = useState(50) */ // Number of videos to retrieve
-
-  // UCJZv4d5rbIKd4QHMPkcABCw
-
-  const YOUTUBE_CHANNELS = []
-  const maxResults = 20;
 
   /* TODO: TRY THIS USEEFFECT OUT INSTEAD -- it checks if the data exists in localStorage first so it limits API calls
 
@@ -57,12 +56,7 @@ function Youtube() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const urls = [
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC29ju8bIPH5as8OGnQzwJyA&maxResults=${maxResults}&order=date&type=video`,
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCFbNIlppjAuEX4znoulh0Cw&maxResults=${maxResults}&order=date&type=video`,
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UClb90NQQcskPUGDIXsQEz5Q&maxResults=${maxResults}&order=date&type=video`,
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCJZv4d5rbIKd4QHMPkcABCw&maxResults=${maxResults}&order=date&type=video`
-        ];
+        console.log(urls)
         const data = await fetchYoutubePlaylistData({ urls }); // data = data returned from the custom function api call
         setPlaylistData(data);
         setLoading(false);
@@ -93,16 +87,16 @@ function Youtube() {
       ) : (
         <>
           <SearchBar placeholder="Search videos..." data={mergedPlaylistData} />
-          <ExpandableContainer title="Web Dev Simplified ">
+          <ExpandableContainer title={titles[0]}>
             <YTChannels playlistData={webDevSimplified} loading={loading} errorMessage={errorMessage}  />
           </ExpandableContainer>
-          <ExpandableContainer title="Kevin Powell ">
+          <ExpandableContainer title={titles[1]}>
             <YTChannels playlistData={kevinPowell} loading={loading} errorMessage={errorMessage}  />
           </ExpandableContainer>
-          <ExpandableContainer title="Traversy Media ">
+          <ExpandableContainer title={titles[2]}>
             <YTChannels playlistData={traversyMedia} loading={loading} errorMessage={errorMessage} />
           </ExpandableContainer>
-          <ExpandableContainer title="Developed By Ed ">
+          <ExpandableContainer title={titles[3]}>
             <YTChannels playlistData={devByEd} loading={loading} errorMessage={errorMessage}  />
           </ExpandableContainer>
         </>
@@ -111,5 +105,4 @@ function Youtube() {
   )
 }
 
-export default Youtube
-
+export default YoutubeEntertainment
