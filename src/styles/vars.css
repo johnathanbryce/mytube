@@ -1,12 +1,12 @@
 :root {
-    --background-color: #FEF0E5;
-    --accent-color: #C69999;
-    --card-bg-color: white;
+    --background-color: #FFEDD8 ;
+    --accent-color: #FF7070 ;
+    --card-bg-color: #FFF5EE;
     --header-color: #333333;
     --text-color: #333333;
 
     /* border styles */
-    --borderRadius: 0.2rem;
+    --borderRadius: 2rem;
     /* hover transition */
     --hoverTransition: 0.3s ease-in-out;
     /* content gap*/

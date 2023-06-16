@@ -1,14 +1,17 @@
 .video_card{
     padding: 2rem;
     background-color: var(--card-bg-color);
-    border: var(--borderRadius) solid var(--accent-color);
+    border: 0.2rem solid var(--accent-color);
+    border-radius: var(--borderRadius);
+
 }
 
 .card {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 25rem;
+    width: 20rem;  
+
 }
 
 /* Mobile Devices (landscape) */

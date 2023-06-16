@@ -28,14 +28,14 @@ const ThemeToggle = () => {
     };
 
     return (
-        <div className={styles.dark_mode}>
+        <div className={styles.theme_toggle}>
             <input
-                className={styles.dark_mode_input}
+                className={styles.theme_toggle_input}
                 type='checkbox'
                 id='darkmode-toggle'
                 onChange={toggleTheme}
             />
-            <label className={styles.dark_mode_label} htmlFor='darkmode-toggle'>
+            <label className={styles.theme_toggle_label} htmlFor='darkmode-toggle'>
            {/*      <Image src={Moon} alt='a moon'/>
                 <Image src={Sun} alt='a moon'/> */}
             </label>
