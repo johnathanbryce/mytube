@@ -87,6 +87,8 @@ function YoutubeCoding({urls, titles}: YoutubeProps) {
       ) : (
         <>
           <SearchBar placeholder="Search videos..." data={mergedPlaylistData} />
+          
+          {/*TODO: this should all be mapped out: */}
           <ExpandableContainer title={titles[0]}>
             <YTChannels playlistData={webDevSimplified} loading={loading} errorMessage={errorMessage}  />
           </ExpandableContainer>
