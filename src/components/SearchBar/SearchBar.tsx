@@ -38,9 +38,9 @@ function SearchBar({placeholder, data}: SearchBarProps) {
             {filteredData.slice(0, 5).map((item: any) => {
                 return <a   
                             className={styles.data_item} 
-                            href={`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`} 
+                            href={`https://www.youtube.com/watch?v=${item.id.videoId}`} 
                             target="_blank"
-                            key={item.id}
+                            key={item.id.videoId}
                         > 
                         <p>{item.snippet.title} </p>
                         </a>
