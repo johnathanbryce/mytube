@@ -6,20 +6,13 @@ import YoutubePlayListContainer from '@/components/YoutubePlaylistContainer/Yout
 
 interface YoutubePlaylistProps {
   playlistData: any,
-  loading: boolean,
-  errorMessage: string
+  error: boolean
 }
 
-function YTChannels({playlistData, loading, errorMessage}: YoutubePlaylistProps) {
-
-    if(loading){
-      return <h3> Loading... </h3>
-    }
-    console.log(playlistData)
+function YTChannels({playlistData, error}: YoutubePlaylistProps) {
     return (
       <div>
-        <h6 className={styles.error}>{errorMessage}</h6>
-        <YoutubePlayListContainer>
+        <YoutubePlayListContainer error={error}>
           {playlistData.map((item: any) => (
                   <VideoCard key={item.id.videoId}>
                       <a href={`https://www.youtube.com/watch?v=${item.id.videoId}`} target="_blank">

@@ -4,10 +4,11 @@ import styles from './YoutubePlaylistContainer.module.css'
 import {MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew} from 'react-icons/md'
 
 interface YoutubeMyPlaylistContainerProps{
-    children: any
+    children: any,
+    error: boolean
 }
 
-function YoutubePlayListContainer({children}: YoutubeMyPlaylistContainerProps) {
+function YoutubePlayListContainer({children, error}: YoutubeMyPlaylistContainerProps) {
   const scrollableContainerRef = useRef<HTMLDivElement | null>(null);
   let animationFrameId: number | null = null;
   let scrollAmount: number = 20; // Adjust the scrolling speed as desired
@@ -50,8 +51,9 @@ function YoutubePlayListContainer({children}: YoutubeMyPlaylistContainerProps) {
         onMouseDown={handleMouseDownScrollLeft}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
+        onClick={handleMouseDownScrollLeft}
       >
-        <MdOutlineArrowBackIosNew className={styles.icon} />
+        {!error && <MdOutlineArrowBackIosNew className={styles.icon} />}
       </div>
       <div className={styles.overflow_content_container} ref={scrollableContainerRef}>
         {children}
@@ -60,8 +62,9 @@ function YoutubePlayListContainer({children}: YoutubeMyPlaylistContainerProps) {
         onMouseDown={handleMouseDownScrollRight}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
+        onClick={handleMouseDownScrollRight}
       >
-        <MdOutlineArrowForwardIos className={styles.icon} />
+        {!error && <MdOutlineArrowForwardIos className={styles.icon} />}
       </div>
     </section>
   );

@@ -3,7 +3,8 @@ import styles from '../styles/loading.module.css';
 const LoadingSpinner = () => {
     return (
       <div className={styles.container}>
-        <div className={styles.spinner}></div>
+          <p> Fetching your videos, hang tight! </p>
+          <div className={styles.spinner}></div>
       </div>
     );
   };
