@@ -11,9 +11,7 @@ interface YoutubeProps {
 
 function YoutubeCoding({playlistData, error}: YoutubeProps) {
   let codingPlaylistData = playlistData;
-
-  console.log('og', ...playlistData)
-
+  
   // uses empty array if codingPlaylistData[0] and [1] doesn't exist / hasn't loaded in yet
   const traversyMedia  = codingPlaylistData[0] ?? []; 
   const webDevSimplified = codingPlaylistData[1] ?? []; 
