@@ -23,10 +23,10 @@ export default function Home() {
 
   // TODO: titles are likely located inside the URLS API so likely can take from there directly in child components 
   const codingTitles = [
-    "Web Dev Simplified",
-    "Kevin Powell",
-    "Traversy Media",
-    "Developed By Ed"
+    'Web Dev Simplified',
+    'Kevin Powell',
+    'Traversy Media',
+    'Developed By Ed'
   ]
 
   const entertainmentURLS =[
@@ -50,12 +50,15 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  const [channelTitles, setChannelTitles] = useState<any[]>([])
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const codingData = await fetchYoutubePlaylistData({ urls: codingURLS });
         const entertainmentData = await fetchYoutubePlaylistData({ urls: entertainmentURLS }); 
         setPlaylistData({ codingData: codingData.data, entertainmentData: entertainmentData.data });
+        setChannelTitles([...codingData.data])
         setError(codingData.error)
         setLoading(false);
       } catch (err) {

@@ -11,7 +11,7 @@ interface YoutubeMyPlaylistContainerProps{
 function YoutubePlayListContainer({children, error}: YoutubeMyPlaylistContainerProps) {
   const scrollableContainerRef = useRef<HTMLDivElement | null>(null);
   let animationFrameId: number | null = null;
-  let scrollAmount: number = 20; // Adjust the scrolling speed as desired
+  let scrollAmount: number = 9; // Adjust the scrolling speed as desired
 
   const handleMouseDownScrollLeft = () => {
     scrollAmount = -Math.abs(scrollAmount); // Make sure scroll amount is negative for left scrolling

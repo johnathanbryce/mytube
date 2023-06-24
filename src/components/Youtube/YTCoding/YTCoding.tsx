@@ -3,16 +3,16 @@ import styles from './YTCoding.module.css'
 import YTChannels from '@/components/Youtube/YTChannels/YTChannels'
 import ExpandableContainer from '@/components/ExpandableContainer/ExpandableContainer'
 import SearchBar from '@/components/SearchBar/SearchBar'
-import LoadingSpinner from '@/app/loading'
 
 interface YoutubeProps {
   playlistData: any[],
   error: boolean
-  titles?: string[],
 }
 
-function YoutubeCoding({titles, playlistData, error}: YoutubeProps) {
+function YoutubeCoding({playlistData, error}: YoutubeProps) {
   let codingPlaylistData = playlistData;
+
+  console.log('og', ...playlistData)
 
   // uses empty array if codingPlaylistData[0] and [1] doesn't exist / hasn't loaded in yet
   const traversyMedia  = codingPlaylistData[0] ?? []; 
@@ -25,23 +25,12 @@ function YoutubeCoding({titles, playlistData, error}: YoutubeProps) {
 
   return (
     <section className={styles.youtube}>
-          <>
           <SearchBar placeholder="Search videos..." data={mergedPlaylistData} />
-          
-          {/*TODO: this should all be mapped out: */}
-          <ExpandableContainer title={titles[0]}>
-            <YTChannels playlistData={webDevSimplified} error={error} />
-          </ExpandableContainer>
-          <ExpandableContainer title={titles[1]}>
-            <YTChannels playlistData={kevinPowell} error={error} />
-          </ExpandableContainer>
-          <ExpandableContainer title={titles[2]}>
-            <YTChannels playlistData={traversyMedia} error={error} />
-          </ExpandableContainer>
-          <ExpandableContainer title={titles[3]}>
-            <YTChannels playlistData={devByEd} error={error} />
-          </ExpandableContainer>
-        </>
+          {playlistData.map((playlist, index) => (
+            <ExpandableContainer title={playlist[0].snippet.channelTitle} key={index}>
+              <YTChannels playlistData={playlist} error={error}/>
+            </ExpandableContainer>
+          ))}
     </section>
   )
 }

@@ -1,10 +1,26 @@
 .thumbnail{
-    width: 100%;
+    width: 80%;
     height: auto;
     object-fit: cover;
+    margin: 0 auto;
 }
 
 .error{
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.text_container{
+    margin-top: 2rem;
+}
+
+.title{
+    text-align: center;
+    text-wrap: balance;
+    padding-top: 2rem;
+}
+
+.date {
+    text-align: center;
+    font-weight: 400;
 }

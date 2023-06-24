@@ -7,7 +7,7 @@ import HorizontalLineBreak from '@/components/HorizontalLineBreak/HorizontalLine
 import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai'
 
 interface ExpandableContainerProps {
-    title: string,
+    title: any,
     children: any
 }
 
@@ -17,6 +17,8 @@ function ExpandableContainer({title, children}: ExpandableContainerProps) {
   const toggleExpand = () =>{
     setIsExpanded((prev) => !prev)
   }
+
+  
   return (
     <div className={styles.expandable_container}>
         <div onClick={toggleExpand}>

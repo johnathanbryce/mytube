@@ -8,10 +8,9 @@ import LoadingSpinner from '@/app/loading'
 interface YoutubeProps {
   playlistData: any[],
   error: boolean,
-  titles: string[]
 }
 
-function YoutubeEntertainment({titles, playlistData, error}: YoutubeProps) {
+function YoutubeEntertainment({ playlistData, error}: YoutubeProps) {
   let entertainmentPlaylistData = playlistData;
 
   // uses empty array if playlistData[0] and [1] doesn't exist / hasn't loaded in yet
@@ -25,21 +24,14 @@ function YoutubeEntertainment({titles, playlistData, error}: YoutubeProps) {
 
   return (
     <section className={styles.youtube}>
-        <>
+  
           <SearchBar placeholder="Search videos..." data={mergedPlaylistData} />
-          <ExpandableContainer title={titles[0]}>
-            <YTChannels playlistData={zanderBudnick} error={error} />
-          </ExpandableContainer>
-          <ExpandableContainer title={titles[1]}>
-            <YTChannels playlistData={NHL} error={error} />
-          </ExpandableContainer>
-          <ExpandableContainer title={titles[2]}>
-            <YTChannels playlistData={internetHistorian} error={error} />
-          </ExpandableContainer>
-          <ExpandableContainer title={titles[3]}>
-            <YTChannels playlistData={theHockeyGuy} error={error} />
-          </ExpandableContainer>
-        </>
+
+          {playlistData.map((playlist, index) => (
+            <ExpandableContainer title={playlist[0].snippet.channelTitle} key={index}>
+              <YTChannels playlistData={playlist} error={error}/>
+            </ExpandableContainer>
+          ))}
 
     </section>
   )
