@@ -1,10 +1,37 @@
+.playlist_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    align-items: center;
+    gap: 3rem;
+}
+
+.video_main_content{
+    
+}
+
 .thumbnail{
-    width: 100%;
+    width: 70%;
     height: auto;
     object-fit: cover;
+    margin: 0 auto;
 }
 
 .error{
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.title{
+    text-align: center;
+    text-wrap: balance;
+    padding-top: 2rem;
+}
+
+.date {
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-style: italic;
+    position: absolute;
+    bottom: 1rem;
+    left: 30%;
 }

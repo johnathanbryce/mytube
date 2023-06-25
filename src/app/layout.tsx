@@ -8,6 +8,7 @@ import Head from 'next/head'
 // internal components
 import Header from '@/components/Header/Header'
 import Layout from '@/components/Layout/Layout'
+import Footer from '@/components/Footer/Footer'
 
 const montserrat = Montserrat({
   weight: '400',
@@ -36,8 +37,10 @@ export default function RootLayout({
         <Layout>
         <Header />
         {children}
+        <Footer />
         </Layout>
-      </body>  
+
+      </body> 
     </html>
   )
 }
