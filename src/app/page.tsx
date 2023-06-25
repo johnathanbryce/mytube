@@ -12,9 +12,11 @@ import fetchYoutubePlaylistData from '@/utils/fetchYoutubePlaylistData';
 // internal lists
 import youtubeURLS from '@/lists/youtubeURLS';
 
-
 export default function Home() {
-  const [playlistData, setPlaylistData] = useState<{ codingData: any[]; entertainmentData: any[] }>({ codingData: [], entertainmentData: [] });
+  const [playlistData, setPlaylistData] = useState<{ codingData: any[]; entertainmentData: any[] }>(
+    { codingData: [], 
+      entertainmentData: [] 
+    });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 

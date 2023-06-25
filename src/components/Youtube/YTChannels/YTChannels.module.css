@@ -1,5 +1,16 @@
+.playlist_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    align-items: center;
+    gap: 3rem;
+}
+
+.video_main_content{
+    
+}
+
 .thumbnail{
-    width: 80%;
+    width: 70%;
     height: auto;
     object-fit: cover;
     margin: 0 auto;
@@ -10,10 +21,6 @@
     margin-bottom: 2rem;
 }
 
-.text_container{
-    margin-top: 2rem;
-}
-
 .title{
     text-align: center;
     text-wrap: balance;
@@ -22,5 +29,9 @@
 
 .date {
     text-align: center;
-    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-style: italic;
+    position: absolute;
+    bottom: 1rem;
+    left: 30%;
 }

@@ -1,10 +1,10 @@
-const maxResults = 10;
+const maxResults = 8;
 
 const youtubeURLS = [
     {
         type: 'Coding',
         urls: [
-            `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC29ju8bIPH5as8OGnQzwJyA&maxResults=${maxResults}&order=date&type=video`,
+            `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCsBjURrPoezykLs9EqgamOA&maxResults=${maxResults}&order=date&type=video`,
             `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCFbNIlppjAuEX4znoulh0Cw&maxResults=${maxResults}&order=date&type=video`,
             `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UClb90NQQcskPUGDIXsQEz5Q&maxResults=${maxResults}&order=date&type=video`,
             `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCJZv4d5rbIKd4QHMPkcABCw&maxResults=${maxResults}&order=date&type=video`

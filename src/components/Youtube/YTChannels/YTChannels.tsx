@@ -21,20 +21,20 @@ function YTChannels({playlistData, error}: YoutubePlaylistProps) {
   };
 
     return (
-      <div>
-        <YoutubePlayListContainer error={error}>
+      <div className={styles.playlist_container}>
+        {/* <YoutubePlayListContainer error={error}> */}
           {playlistData.map((item: any) => (
                   <VideoCard key={item.id.videoId}>
-                    <div>
+                    <div className={styles.video_main_content}>
                       <a href={`https://www.youtube.com/watch?v=${item.id.videoId}`} target="_blank">
                         <img src={item.snippet.thumbnails.high.url} alt={''} className={styles.thumbnail} />
                       </a>
                       <h6 className={styles.title}>{item.snippet.title}</h6>
                     </div>
-                    <h6 className={styles.date} >{formatDate(item.snippet.publishedAt)}</h6>
+                    <p className={styles.date} >{formatDate(item.snippet.publishedAt)}</p>
                   </VideoCard>
           ))}
-      </YoutubePlayListContainer>
+     {/*  </YoutubePlayListContainer> */}
       </div>
 
     )
