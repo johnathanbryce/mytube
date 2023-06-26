@@ -5,7 +5,6 @@ interface fetchYoutubePlaylistDataProps {
 }
 
 async function fetchYoutubePlaylistData({ urls }: fetchYoutubePlaylistDataProps) {
-    console.log(apiKey)
     try {
       const dataPromises = urls.map((url: any) => fetchPlaylistData(url));
       const data = await Promise.all(dataPromises);
