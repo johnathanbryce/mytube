@@ -5,6 +5,7 @@ interface fetchYoutubePlaylistDataProps {
 }
 
 async function fetchYoutubePlaylistData({ urls }: fetchYoutubePlaylistDataProps) {
+    console.log(apiKey)
     try {
       const dataPromises = urls.map((url: any) => fetchPlaylistData(url));
       const data = await Promise.all(dataPromises);
@@ -24,6 +25,7 @@ async function fetchYoutubePlaylistData({ urls }: fetchYoutubePlaylistDataProps)
       const data = await res.json();
       return data.items;
     } catch (err) {
+      console.log(err)
       throw new Error('Error fetching data')             // triggers catch statement above
       //return [];
     }
