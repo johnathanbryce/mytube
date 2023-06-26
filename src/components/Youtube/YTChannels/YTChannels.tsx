@@ -2,7 +2,6 @@
 import styles from './YTChannels.module.css'
 // internal components
 import VideoCard from '@/components/VideoCard/VideoCard';
-import YoutubePlayListContainer from '@/components/YoutubePlaylistContainer/YoutubePlayListContainer';
 
 interface YoutubePlaylistProps {
   playlistData: any,
@@ -22,7 +21,6 @@ function YTChannels({playlistData, error}: YoutubePlaylistProps) {
 
     return (
       <div className={styles.playlist_container}>
-        {/* <YoutubePlayListContainer error={error}> */}
           {playlistData.map((item: any) => (
                   <VideoCard key={item.id.videoId}>
                     <div className={styles.video_main_content}>
@@ -34,7 +32,6 @@ function YTChannels({playlistData, error}: YoutubePlaylistProps) {
                     <p className={styles.date} >{formatDate(item.snippet.publishedAt)}</p>
                   </VideoCard>
           ))}
-     {/*  </YoutubePlayListContainer> */}
       </div>
 
     )

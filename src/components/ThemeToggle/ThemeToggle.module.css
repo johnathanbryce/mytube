@@ -1,6 +1,7 @@
 .theme_toggle {
+    display: flex;
     margin-top: -0.2rem;
-    margin-left: 0.1remx;
+    margin-left: 0.1rem;
 }
 
 .theme_toggle_label {

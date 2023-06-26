@@ -1,5 +1,4 @@
 .video_card{
-    
     padding: 2rem;
     background-color: var(--card-bg-color);
     border: 0.2rem solid var(--accent-color);
@@ -17,4 +16,8 @@
 
 /* Mobile Devices (landscape) */
 @media (max-width: 775px) { 
+    .video_card{
+        height: 26rem;
+        padding:1rem;
+    }
 }
