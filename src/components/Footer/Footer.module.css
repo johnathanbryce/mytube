@@ -1,13 +1,13 @@
 .footer { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30rem;
-    gap: 1.5rem;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
 }
 
 .footer div {
     display: flex;
+    justify-content: center;
+    padding-top: 2rem;
     gap: 2.5rem;
 }
 
@@ -19,9 +19,3 @@
     color: var(--accent-color);
 }
 
-/* Mobile Devices up to 480px */
-@media (max-width: 480px) {  
-    .footer{
-        margin-top: 14rem;
-    }
-}
