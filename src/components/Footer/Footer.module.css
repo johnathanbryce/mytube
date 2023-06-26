@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 18rem;
+    margin-top: 30rem;
     gap: 1.5rem;
 }
 
@@ -19,3 +19,9 @@
     color: var(--accent-color);
 }
 
+/* Mobile Devices up to 480px */
+@media (max-width: 480px) {  
+    .footer{
+        margin-top: 14rem;
+    }
+}
