@@ -5,9 +5,24 @@
     gap: 3rem;
 }
 
+.remove_icon{
+    font-size: 3rem;
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    z-index: 10;
+    color: white;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.remove_icon:hover{
+    background-color: var(--text-color);
+    color: var(--accent-color);
+}
 
 .thumbnail{
-    width: 70%;
+    max-width: 18rem;
     height: auto;
     object-fit: cover;
     margin: 0 auto;

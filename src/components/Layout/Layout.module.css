@@ -7,12 +7,6 @@
     min-height: 100vh;
 }
   
-/* Smaller Screen Rezise */
-@media only screen and (max-width: 1200px){
-.container{
-  }
-}
-
 /* Galaxy fold / < 300 px tiny screens */
 @media only screen and (max-width: 300px){
 .container {
