@@ -26,4 +26,4 @@ Open a Pull Request
 **Contact** 
 Johnathan Bryce - johnathanbryce@gmail.com
 
-Project Link: [[https://github.com/yourusername/FitFriends](https://mytube-jb.vercel.app/)](https://mytube-jb.vercel.app/)https://mytube-jb.vercel.app/
+Project Link: https://mytube-jb.vercel.app/
