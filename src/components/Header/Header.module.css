@@ -4,3 +4,78 @@
     justify-content: space-between;
     padding-top: 3rem;
 }
+
+.header_controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.restore_all_button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--hoverTransition);
+    animation: slideIn 0.3s ease-out;
+}
+
+.restore_all_button:hover {
+    background-color: var(--text-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.restore_all_button:active {
+    transform: translateY(0);
+}
+
+.restore_all_button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.restore_icon {
+    font-size: 2rem;
+}
+
+.restore_text {
+    white-space: nowrap;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 775px) {
+    .header_controls {
+        gap: 1rem;
+    }
+
+    .restore_all_button {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .restore_text {
+        display: none;
+    }
+
+    .restore_icon {
+        font-size: 2.4rem;
+    }
+}
