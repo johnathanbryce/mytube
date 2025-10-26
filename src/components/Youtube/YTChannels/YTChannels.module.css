@@ -5,6 +5,51 @@
     gap: 3rem;
 }
 
+/* Video Item Animations */
+.video_item {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.video_item.removing {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* Remove Button Styles */
+.remove_button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.remove_button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: 50%;
+}
+
 .remove_icon{
     font-size: 3rem;
     position: absolute;
@@ -14,9 +59,10 @@
     color: white;
     background-color: var(--accent-color);
     border-radius: 50%;
+    transition: all var(--hoverTransition);
 }
 
-.remove_icon:hover{
+.remove_button:hover .remove_icon{
     background-color: var(--text-color);
     color: var(--accent-color);
 }
@@ -46,6 +92,52 @@
     position: absolute;
     bottom: 1rem;
     left: 30%;
+}
+
+/* Empty State Styles */
+.empty_state {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.empty_message {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.restore_button {
+    padding: 1.2rem 2.4rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--borderRadius);
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--hoverTransition);
+}
+
+.restore_button:hover {
+    background-color: var(--text-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.restore_button:active {
+    transform: translateY(0);
+}
+
+.restore_button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
 }
 
 /* Mobile Devices (landscape) */
