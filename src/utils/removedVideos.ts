@@ -24,7 +24,7 @@ export const addRemovedVideo = (videoId: string): void => {
   try {
     const removed = getRemovedVideos();
     removed.add(videoId);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify([...removed]));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(removed)));
   } catch (error) {
     console.error('Error adding removed video to localStorage:', error);
   }
@@ -39,7 +39,7 @@ export const removeRemovedVideo = (videoId: string): void => {
   try {
     const removed = getRemovedVideos();
     removed.delete(videoId);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify([...removed]));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(removed)));
   } catch (error) {
     console.error('Error removing video from localStorage:', error);
   }
